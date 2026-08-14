@@ -1,0 +1,123 @@
+
+:root {
+    --dim: #555555
+}
+
+body {
+    font-family: "JetBrains Mono", monospace;
+
+    color: white;
+    background-color: #0b0d0f;
+
+    margin-top: 0;
+}
+
+@keyframes moveDiagonal {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100% }
+}
+
+@property --rainbow {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: rgb(255, 0, 0);
+}
+
+@keyframes rainbow {
+    0% { --rainbow: rgb(255, 0, 0); }
+    10% { --rainbow: rgb(255, 154, 0); }
+    20% { --rainbow: rgb(208, 222, 33); }
+    30% { --rainbow: rgb(79, 220, 74); }
+    40% { --rainbow: rgb(63, 218, 216); }
+    50% { --rainbow: rgb(47, 201, 226); }
+    60% { --rainbow: rgb(28, 127, 238); }
+    70% { --rainbow: rgb(95, 21, 242); }
+    80% { --rainbow: rgb(186, 12, 248); }
+    90% { --rainbow: rgb(251, 7, 217); }
+    100% { --rainbow: rgb(255, 0, 0); }
+}
+
+.overarching-margins {
+    margin: 0 5rem 0;
+    padding: 0 40px 0;
+}
+
+.rainbow-color {
+    animation: rainbow 4s linear infinite;
+    color: var(--rainbow);
+}
+
+.topnav-item {
+    margin: 0 1rem 0;
+}
+
+#topnav {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    border-bottom: 0.1rem solid var(--dim);
+}
+
+#topbar {
+    position: sticky;
+    top: 0;
+
+    backdrop-filter: blur(12px);          /* the blur */
+
+    margin-bottom: 0.5rem;
+}
+
+.nav-separator {
+    font-family: "JetBrains Mono", monospace;
+    font-size: large;
+    color: var(--dim);
+}
+
+#pagelinks {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.pagelink {
+    margin: 0 0.5rem 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-size: large;
+    font-style: normal;
+}
+
+#dylzdn {
+    color: inherit;
+    text-decoration: none;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: large;
+}
+
+.hero-name {
+
+    max-width: 70%;
+
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 1000;
+    font-style: normal;
+}
+
+.hero-name h1 {
+    border-width: 0.5rem;
+    border-radius: 1rem;
+    border-style: solid;
+
+    animation: rainbow 4s linear infinite;
+    border-color: var(--rainbow);
+
+    margin: 0;
+
+    font-size: 100px;
+}

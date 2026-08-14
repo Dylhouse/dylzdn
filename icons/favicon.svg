@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+    <defs>
+        <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgb(255, 0, 0)"/>
+            <stop offset="10%" stop-color="rgb(255, 154, 0)"/>
+            <stop offset="20%" stop-color="rgb(208, 222, 33)"/>
+            <stop offset="30%" stop-color="rgb(79, 220, 74)"/>
+            <stop offset="40%" stop-color="rgb(63, 218, 216)"/>
+            <stop offset="50%" stop-color="rgb(47, 201, 226)"/>
+            <stop offset="60%" stop-color="rgb(28, 127, 238)"/>
+            <stop offset="70%" stop-color="rgb(95, 21, 242)"/>
+            <stop offset="80%" stop-color="rgb(186, 12, 248)"/>
+            <stop offset="90%" stop-color="rgb(251, 7, 217)"/>
+            <stop offset="100%" stop-color="rgb(255, 0, 0)"/>
+        </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="28" fill="url(#rainbow)"/>
+</svg>
