@@ -3,6 +3,15 @@
     --rainbow-text-sway: 5px;
 
     --dim: #555555;
+    --visited: rgb(28, 127, 238);
+}
+
+@font-face {
+  font-family: "monogram";
+  src: url(monogram.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -46,6 +55,8 @@ body {
 }
 
 #cursor {
+    pointer-events: none;
+
     width: 80px;
     height: 80px;
     
@@ -67,8 +78,10 @@ span.rainbow {
 }
 
 .overarching-margins {
-    margin: 0 5rem 0;
-    padding: 0 40px 0;
+    max-width: 1200px;     /* cap how wide content can get */
+    margin: 0 auto;        /* center it once it hits the cap */
+    padding: 0 1.5rem;     /* breathing room at the edges */
+    padding: 0 clamp(16px, 5vw, 64px);
 }
 
 .rainbow-color {
@@ -119,6 +132,76 @@ span.rainbow {
     font-optical-sizing: auto;
     font-size: large;
     font-style: normal;
+}
+
+.preview-text {
+    display: inline-block;
+    
+    background-color: #0d8603;
+    padding: 2px 6px;
+    border-radius: 4px;
+
+    transition: background-color 0.25s;
+}
+
+#random-stuff-text {
+    background-color: #a3a30a;
+}
+
+#random-stuff-text:hover {
+    background-color: #c9c904;
+}
+
+.preview {
+    display: inline-block;
+    position: relative;
+}
+
+.preview-text:hover {
+    background-color: #12b004;
+}
+
+.preview-text:hover + .preview-item {
+    opacity: 1;
+}
+
+.preview-item {
+    /* makes it so it doesn't block the cursor (especially while it's hidden) */
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 0.25s;
+
+    position: absolute;
+    top: 100%;         /* below the text */
+    left: 0;
+    z-index: 10;
+
+    margin-top: 8px;  /* spacing below text */
+
+    width: 220px;      /* adjust */
+    height: auto;
+
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.game-text {
+    color: green;
+
+    font-family: monogram;
+    font-size: 22pt;
+
+    transition: color 0.25s;
+}
+
+.game-text:visited {
+    color: var(--visited);
+}
+
+.game-text:hover {
+    color: #12b004;
 }
 
 #dylzdn {
