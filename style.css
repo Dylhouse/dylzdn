@@ -1,6 +1,8 @@
 
 :root {
-    --dim: #555555
+    --rainbow-text-sway: 5px;
+
+    --dim: #555555;
 }
 
 body {
@@ -14,13 +16,19 @@ body {
 
 @keyframes moveDiagonal {
     from { background-position: 0% 0%; }
-    to { background-position: 100% 100% }
+    to { background-position: 100% 100%; }
 }
 
 @property --rainbow {
     syntax: "<color>";
     inherits: false;
     initial-value: rgb(255, 0, 0);
+}
+
+@keyframes updown {
+    0% { transform: translateY(var(--rainbow-text-sway)); }
+    50% { transform: translateY(calc(var(--rainbow-text-sway) * -1)); }
+    100% { transform: translateY(var(--rainbow-text-sway)); }
 }
 
 @keyframes rainbow {
@@ -35,6 +43,27 @@ body {
     80% { --rainbow: rgb(186, 12, 248); }
     90% { --rainbow: rgb(251, 7, 217); }
     100% { --rainbow: rgb(255, 0, 0); }
+}
+
+#cursor {
+    width: 80px;
+    height: 80px;
+    
+    background-size: contain;
+
+    position: fixed;
+
+    z-index: 999;
+}
+
+span.rainbow-char {
+    display: inline-block;
+    animation: rainbow 4s linear infinite, updown 4s ease-in-out infinite;
+    color: var(--rainbow);
+}
+
+span.rainbow {
+    /* exists only in js */
 }
 
 .overarching-margins {
@@ -105,7 +134,7 @@ body {
     max-width: 70%;
 
     font-family: "JetBrains Mono", monospace;
-    font-weight: 1000;
+    font-weight: 800;
     font-style: normal;
 }
 
